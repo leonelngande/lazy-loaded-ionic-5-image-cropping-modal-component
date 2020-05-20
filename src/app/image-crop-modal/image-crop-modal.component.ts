@@ -11,7 +11,7 @@ import {CommonModule} from '@angular/common';
 })
 export class ImageCropModalComponent implements OnInit {
 
-  private croppedImageBase64 = '';
+  croppedImageBase64 = '';
   /**
    * Image to be cropped as a base64 string.
    * Should be passed in from the component calling this modal.
