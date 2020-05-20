@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Resize Image</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+      <image-cropper
+              [imageBase64]="imageBase64"
+              [maintainAspectRatio]="true"
+              [aspectRatio]="4 / 4"
+              [resizeToWidth]="0"
+              format="png"
+              (imageCropped)="imageCropped($event)">
+
+      </image-cropper>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col></ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="primary"
+                  [disabled]="!imageBase64"
+                  (click)="dismissModal(croppedImageBase64)">
+        Continue
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="4" offsetSm="4">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <ion-label position="stacked">Profile image</ion-label>
+        <ion-input type="file" clearInput (change)="processFile($event)"></ion-input>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col *ngIf="originalImageBase64">
+        <ion-label>Original image</ion-label>
+        <img [src]="originalImageBase64" alt="">
+      </ion-col>
+
+      <ion-col *ngIf="croppedImageBase64">
+        <ion-label>Cropped image</ion-label>
+        <img [src]="croppedImageBase64" alt="">
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
