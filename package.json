@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy-gh-pages": "ionic build --prod -- --base-href https://leonelngande.github.io/lazy-loaded-ionic-5-image-cropping-modal-component/ && npx angular-cli-ghpages --dir=www"
   },
   "private": true,
   "dependencies": {
